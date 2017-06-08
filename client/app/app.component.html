@@ -1,0 +1,35 @@
+﻿<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li >Menu</li>
+	  <li *ngIf="checklog()" class="displayuser">{{currentUser}}</li>
+      <li *ngIf="!checklog()" [routerLink]="['/login']">Login</li>
+      <li *ngIf="checklog()" (click)="logout()">Logout</li>
+      <li [routerLink]="['/']">Users</li>
+    </ul>
+    <form class="navbar-form navbar-left">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="main">
+<img class="backgroundimage" src="https://cdn.pixabay.com/photo/2016/11/19/17/12/buildings-1840395_960_720.jpg">
+    <div class="container">
+        <div class="col-sm-8 col-sm-offset-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<!-- credits -->
+<div class="text-center">
+
+</div>
